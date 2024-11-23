@@ -29,7 +29,7 @@ const Slider = () => {
       >
         {images.map((img, index) => (
           <SwiperSlide key={index}>
-            <div className="flex justify-center items-center mt-10 pb-5">
+            <div className="flex justify-center items-center mt-10 pb-5 h-[200px] md:h-[400px]">
               <img
                 src={img}
                 alt={`Slide ${index + 1}`}

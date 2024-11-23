@@ -1,0 +1,84 @@
+[
+    {
+      "id": 1,
+      "brandName": "TechStore",
+      "brandLogo": "https://i.ibb.co.com/ZLhNd9B/gadget-and-gear.png",
+      "rating": 4.5,
+      "description": "Your one-stop shop for the latest gadgets and electronics.",
+      "saleIsOn": true
+    },
+
+    {
+      "id": 2,
+      "brandName": "GroceryMart",
+      "brandLogo": "https://i.ibb.co.com/ZVVMn3x/Shwapno.png",
+      "rating": 4.8,
+      "description": "Fresh groceries delivered straight to your door.",
+      "saleIsOn": false
+    },
+    {
+      "id": 3,
+      "brandName": "FashionHub",
+      "brandLogo": "https://i.ibb.co.com/vdpkbrd/rich-man.png",
+      "rating": 4.2,
+      "description": "Trendy clothing and accessories for every occasion.",
+      "saleIsOn": true
+    },
+    {
+      "id": 4,
+      "brandName": "TravelEase",
+      "brandLogo": "https://i.ibb.co.com/Qv3TRfS/biman-bd-airlines.png",
+      "rating": 4.7,
+      "description": "Affordable travel packages to your dream destinations.",
+      "saleIsOn": true
+    },
+    {
+      "id": 5,
+      "brandName": "BeautyBox",
+      "brandLogo": "https://i.ibb.co.com/TTy7DCQ/diamond-world.jpg",
+      "rating": 4.6,
+      "description": "High-quality skincare and beauty products delivered monthly.",
+      "saleIsOn": false
+    },
+    {
+      "id": 6,
+      "brandName": "FurniWorld",
+      "brandLogo": "https://i.ibb.co.com/PTBx9Dh/partex-furniture.png",
+      "rating": 4.3,
+      "description": "Stylish furniture to enhance your living space.",
+      "saleIsOn": true
+    },
+    {
+      "id": 7,
+      "brandName": "GadgetZone",
+      "brandLogo": "https://i.ibb.co.com/FXtCPnj/gentel-park.png",
+      "rating": 4.4,
+      "description": "Innovative gadgets for your everyday needs.",
+      "saleIsOn": false
+    },
+    {
+      "id": 8,
+      "brandName": "FoodiesPlace",
+      "brandLogo": "https://i.ibb.co.com/s1f38ds/cinema-ticket-1075066-1280.png",
+      "rating": 4.9,
+      "description": "Delicious meals delivered right to your doorstep.",
+      "saleIsOn": true
+    },
+    {
+      "id": 9,
+      "brandName": "HealthMart",
+      "brandLogo": "https://i.ibb.co.com/hdBgNmR/applo-hospital.png",
+      "rating": 4.5,
+      "description": "Your trusted partner for health and wellness products.",
+      "saleIsOn": false
+    },
+    {
+      "id": 10,
+      "brandName": "ShoeHaven",
+      "brandLogo": "https://i.ibb.co.com/T2vJMm2/lotto.png",
+      "rating": 4.6,
+      "description": "Comfortable and stylish shoes for every step you take.",
+      "saleIsOn": true
+    }
+  ]
+  
