@@ -11,7 +11,7 @@ const HomeLayout = () => {
     return (
         <div className="font-poppins">
 
-            <div className="w-11/12 mx-auto p-4">
+            <div className=" mx-auto ">
                 {/* logo */}
 
                 <NavBar ></NavBar>
@@ -22,7 +22,7 @@ const HomeLayout = () => {
 
 
 
-                <main className="grid grid-cols-12 mx-auto pt-5">
+                <main className="grid grid-cols-12 mx-auto pt-5 w-11/12">
                     <aside className="col-span-3">
                         <LeftNavbar></LeftNavbar>
                     </aside>

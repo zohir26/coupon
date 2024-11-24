@@ -1,84 +1,213 @@
 [
-    {
-      "id": 1,
-      "brandName": "TechStore",
-      "brandLogo": "https://i.ibb.co.com/ZLhNd9B/gadget-and-gear.png",
-      "rating": 4.5,
-      "description": "Your one-stop shop for the latest gadgets and electronics.",
-      "saleIsOn": true
-    },
-
-    {
-      "id": 2,
-      "brandName": "GroceryMart",
-      "brandLogo": "https://i.ibb.co.com/ZVVMn3x/Shwapno.png",
-      "rating": 4.8,
-      "description": "Fresh groceries delivered straight to your door.",
-      "saleIsOn": false
-    },
-    {
-      "id": 3,
-      "brandName": "FashionHub",
-      "brandLogo": "https://i.ibb.co.com/vdpkbrd/rich-man.png",
-      "rating": 4.2,
-      "description": "Trendy clothing and accessories for every occasion.",
-      "saleIsOn": true
-    },
-    {
-      "id": 4,
-      "brandName": "TravelEase",
-      "brandLogo": "https://i.ibb.co.com/Qv3TRfS/biman-bd-airlines.png",
-      "rating": 4.7,
-      "description": "Affordable travel packages to your dream destinations.",
-      "saleIsOn": true
-    },
-    {
-      "id": 5,
-      "brandName": "BeautyBox",
-      "brandLogo": "https://i.ibb.co.com/TTy7DCQ/diamond-world.jpg",
-      "rating": 4.6,
-      "description": "High-quality skincare and beauty products delivered monthly.",
-      "saleIsOn": false
-    },
-    {
-      "id": 6,
-      "brandName": "FurniWorld",
-      "brandLogo": "https://i.ibb.co.com/PTBx9Dh/partex-furniture.png",
-      "rating": 4.3,
-      "description": "Stylish furniture to enhance your living space.",
-      "saleIsOn": true
-    },
-    {
-      "id": 7,
-      "brandName": "GadgetZone",
-      "brandLogo": "https://i.ibb.co.com/FXtCPnj/gentel-park.png",
-      "rating": 4.4,
-      "description": "Innovative gadgets for your everyday needs.",
-      "saleIsOn": false
-    },
-    {
-      "id": 8,
-      "brandName": "FoodiesPlace",
-      "brandLogo": "https://i.ibb.co.com/s1f38ds/cinema-ticket-1075066-1280.png",
-      "rating": 4.9,
-      "description": "Delicious meals delivered right to your doorstep.",
-      "saleIsOn": true
-    },
-    {
-      "id": 9,
-      "brandName": "HealthMart",
-      "brandLogo": "https://i.ibb.co.com/hdBgNmR/applo-hospital.png",
-      "rating": 4.5,
-      "description": "Your trusted partner for health and wellness products.",
-      "saleIsOn": false
-    },
-    {
-      "id": 10,
-      "brandName": "ShoeHaven",
-      "brandLogo": "https://i.ibb.co.com/T2vJMm2/lotto.png",
-      "rating": 4.6,
-      "description": "Comfortable and stylish shoes for every step you take.",
-      "saleIsOn": true
-    }
-  ]
-  
+  {
+    "_id": "1",
+    "brand_name": "TechStore",
+    "brand_logo": "https://i.ibb.co.com/ZLhNd9B/gadget-and-gear.png",
+    "rating": 4.5,
+    "description": "Your one-stop shop for the latest gadgets and electronics.",
+    "isSaleOn": true,
+    "shop_Link": "https://www.techstore.com",
+    "category": "Electronics",
+    "coupons": [
+      {
+        "coupon_code": "TECH10",
+        "description": "10% off on all electronics",
+        "expiry_date": "2024-12-31",
+        "condition": "Minimum purchase of $100",
+        "coupon_type": "Discount"
+      }
+    ]
+  },
+  {
+    "_id": "2",
+    "brand_name": "GroceryMart",
+    "brand_logo": "https://i.ibb.co.com/ZVVMn3x/Shwapno.png",
+    "rating": 4.8,
+    "description": "Fresh groceries delivered straight to your door.",
+    "isSaleOn": false,
+    "shop_Link": "https://www.grocerymart.com",
+    "category": "Groceries",
+    "coupons": [
+      {
+        "coupon_code": "FRESH5",
+        "description": "5% off on fresh produce",
+        "expiry_date": "2024-11-30",
+        "condition": "Valid on fresh items only",
+        "coupon_type": "Discount"
+      },
+      {
+        "coupon_code": "FREEDELIVERY",
+        "description": "Free delivery for orders over $50",
+        "expiry_date": "2024-12-31",
+        "condition": "Order value over $50",
+        "coupon_type": "Free Delivery"
+      }
+    ]
+  },
+  {
+    "_id": "3",
+    "brand_name": "FashionHub",
+    "brand_logo": "https://i.ibb.co.com/vdpkbrd/rich-man.png",
+    "rating": 4.2,
+    "description": "Trendy clothing and accessories for every occasion.",
+    "isSaleOn": true,
+    "shop_Link": "https://www.fashionhub.com",
+    "category": "Fashion",
+    "coupons": [
+      {
+        "coupon_code": "STYLE20",
+        "description": "20% off on all items",
+        "expiry_date": "2025-01-01",
+        "condition": "No minimum purchase required",
+        "coupon_type": "Discount"
+      }
+    ]
+  },
+  {
+    "_id": "4",
+    "brand_name": "TravelEase",
+    "brand_logo": "https://i.ibb.co.com/Qv3TRfS/biman-bd-airlines.png",
+    "rating": 4.7,
+    "description": "Affordable travel packages to your dream destinations.",
+    "isSaleOn": true,
+    "shop_Link": "https://www.travelease.com",
+    "category": "Travel",
+    "coupons": [
+      {
+        "coupon_code": "FLYHIGH",
+        "description": "15% off on all flights",
+        "expiry_date": "2024-12-31",
+        "condition": "Applicable on international flights only",
+        "coupon_type": "Discount"
+      }
+    ]
+  },
+  {
+    "_id": "5",
+    "brand_name": "BeautyBox",
+    "brand_logo": "https://i.ibb.co.com/TTy7DCQ/diamond-world.jpg",
+    "rating": 4.6,
+    "description": "High-quality skincare and beauty products delivered monthly.",
+    "isSaleOn": false,
+    "shop_Link": "https://www.beautybox.com",
+    "category": "Beauty",
+    "coupons": [
+      {
+        "coupon_code": "GLOW10",
+        "description": "10% off on first subscription",
+        "expiry_date": "2024-11-30",
+        "condition": "New customers only",
+        "coupon_type": "Discount"
+      }
+    ]
+  },
+  {
+    "_id": "6",
+    "brand_name": "FurniWorld",
+    "brand_logo": "https://i.ibb.co.com/PTBx9Dh/partex-furniture.png",
+    "rating": 4.3,
+    "description": "Stylish furniture to enhance your living space.",
+    "isSaleOn": true,
+    "shop_Link": "https://www.furniworld.com",
+    "category": "Furniture",
+    "coupons": [
+      {
+        "coupon_code": "FURNI15",
+        "description": "15% off on selected furniture items",
+        "expiry_date": "2024-12-31",
+        "condition": "Applicable on orders over $200",
+        "coupon_type": "Discount"
+      }
+    ]
+  },
+  {
+    "_id": "7",
+    "brand_name": "GadgetZone",
+    "brand_logo": "https://i.ibb.co.com/FXtCPnj/gentel-park.png",
+    "rating": 4.4,
+    "description": "Innovative gadgets for your everyday needs.",
+    "isSaleOn": false,
+    "shop_Link": "https://www.gadgetzone.com",
+    "category": "Electronics",
+    "coupons": [
+      {
+        "coupon_code": "ZONE5",
+        "description": "5% cashback on all gadgets",
+        "expiry_date": "2024-11-30",
+        "condition": "Cashback applied as store credit",
+        "coupon_type": "Cashback"
+      }
+    ]
+  },
+  {
+    "_id": "8",
+    "brand_name": "FoodiesPlace",
+    "brand_logo": "https://i.ibb.co.com/s1f38ds/cinema-ticket-1075066-1280.png",
+    "rating": 4.9,
+    "description": "Delicious meals delivered right to your doorstep.",
+    "isSaleOn": true,
+    "shop_Link": "https://www.foodiesplace.com",
+    "category": "Food & Beverages",
+    "coupons": [
+      {
+        "coupon_code": "FOODIE10",
+        "description": "10% off on your first order",
+        "expiry_date": "2024-12-31",
+        "condition": "Valid for new customers only",
+        "coupon_type": "Discount"
+      },
+      {
+        "coupon_code": "FREEDELIVERY",
+        "description": "Free delivery for orders above $30",
+        "expiry_date": "2024-12-15",
+        "condition": "Order value over $30",
+        "coupon_type": "Free Delivery"
+      }
+    ]
+  },
+  {
+    "_id": "9",
+    "brand_name": "HealthMart",
+    "brand_logo": "https://i.ibb.co.com/hdBgNmR/applo-hospital.png",
+    "rating": 4.5,
+    "description": "Your trusted partner for health and wellness products.",
+    "isSaleOn": false,
+    "shop_Link": "https://www.healthmart.com",
+    "category": "Health & Wellness",
+    "coupons": [
+      {
+        "coupon_code": "HEALTH20",
+        "description": "20% off on supplements",
+        "expiry_date": "2024-11-30",
+        "condition": "Applies to select brands only",
+        "coupon_type": "Discount"
+      }
+    ]
+  },
+  {
+    "_id": "10",
+    "brand_name": "ShoeHaven",
+    "brand_logo": "https://i.ibb.co.com/T2vJMm2/lotto.png",
+    "rating": 4.6,
+    "description": "Comfortable and stylish shoes for every step you take.",
+    "isSaleOn": true,
+    "shop_Link": "https://www.shoehaven.com",
+    "category": "Footwear",
+    "coupons": [
+      {
+        "coupon_code": "SHOE10",
+        "description": "10% off on all footwear",
+        "expiry_date": "2024-12-25",
+        "condition": "No minimum purchase required",
+        "coupon_type": "Discount"
+      },
+      {
+        "coupon_code": "FREESHIPPING",
+        "description": "Free shipping on all orders",
+        "expiry_date": "2024-11-30",
+        "condition": "Valid across all regions",
+        "coupon_type": "Free Shipping"
+      }
+    ]
+  }
+]

@@ -1,13 +1,13 @@
 [
-    { "id": 1, "brandName": "TechStore" },
-    { "id": 2, "brandName": "GroceryMart" },
-    { "id": 3, "brandName": "FashionHub" },
-    { "id": 4, "brandName": "TravelEase" },
-    { "id": 5, "brandName": "BeautyBox" },
-    { "id": 6, "brandName": "FurniWorld" },
-    { "id": 7, "brandName": "GadgetZone" },
-    { "id": 8, "brandName": "FoodiesPlace" },
-    { "id": 9, "brandName": "HealthMart" },
-    { "id": 10, "brandName": "ShoeHaven" }
+    { "_id": 1, "brandName": "TechStore" },
+    { "_id": 2, "brandName": "GroceryMart" },
+    { "_id": 3, "brandName": "FashionHub" },
+    { "_id": 4, "brandName": "TravelEase" },
+    { "_id": 5, "brandName": "BeautyBox" },
+    { "_id": 6, "brandName": "FurniWorld" },
+    { "_id": 7, "brandName": "GadgetZone" },
+    { "_id": 8, "brandName": "FoodiesPlace" },
+    { "_id": 9, "brandName": "HealthMart" },
+    { "_id": 10, "brandName": "ShoeHaven" }
   ]
   

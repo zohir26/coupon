@@ -1,26 +1,28 @@
 import { useLoaderData } from "react-router";
 import { NavLink } from "react-router";
+
 const CategoryCoupon = () => {
-  const brand = useLoaderData(); // Single brand object
+  const brand = useLoaderData();
 
   if (!brand || Object.keys(brand).length === 0) {
-    return <h2>No brand details available</h2>; // Fallback for missing data
+    return <h2>No brand details available</h2>;
   }
 
   return (
-    <div className="p-6">
-      <h2 className="text-2xl font-bold">{brand.brandName}</h2>
-      <img
-        src={brand.brandLogo}
-        alt={brand.brandName}
-        className="w-32 h-32 object-cover my-4"
-      />
-      <p className="text-gray-600">{brand.description}</p>
-      <p className="font-semibold">Rating: {brand.rating} ⭐</p>
-      {brand.saleIsOn && (
-        <p className="text-red-500 font-bold animate-bounce">Sale is On!</p>
-      )}
-      <NavLink className="btn bg-pink-300">Get the Coupon</NavLink>
+    <div className="card bg-base-100 w-96 shadow-xl ml-8">
+      <figure className="px-10 pt-10">
+        <img
+          src={brand.brand_logo}
+          alt={brand.brand_name}
+          className="rounded-xl"
+        />
+      </figure>
+      <div className="card-body items-center text-center">
+        <h2 className="font-semibold">Discount: {brand.coupons[0]?.description || "No discount available"}</h2>
+        <NavLink to={`/coupon/${brand._id}`} className="btn bg-pink-300 hover:text-black">
+          Get the Coupon
+        </NavLink>
+      </div>
     </div>
   );
 };
