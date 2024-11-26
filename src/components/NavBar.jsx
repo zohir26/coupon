@@ -1,12 +1,17 @@
+import { useContext } from "react";
 import { Link } from "react-router";
+import { AuthContext } from "../Provider/AuthProvider";
 
 
 const NavBar = () => {
+  const {user,logOut}= useContext(AuthContext);
   const links = <>
           <li><Link to="/home">Home</Link></li>
           <li><Link to="/brands">Brands</Link></li>
           <li><Link to="/register">My Profile</Link></li>
+          <li><Link to="/profile">{user && user.email}</Link></li>
   </>
+  
     return (
         <div className="navbar bg-[#A96685] text-white p-3">
         <div className="navbar-start">
@@ -29,9 +34,10 @@ const NavBar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-black">
                   {links}
+                 
             </ul>
           </div>
-          <Link to="/" className="btn btn-ghost text-xl">Coupon PRO</Link>
+          <Link to="/" className="btn btn-ghost text-xl">Coupon PRO </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 ">
@@ -39,8 +45,18 @@ const NavBar = () => {
           </ul>
         </div>
         <div className="navbar-end flex gap-3 ">
-          <Link to="/login" className="hover:text-red-300">Login</Link>
-          <Link to="/register" className="hover:text-red-300">Register</Link>
+         {
+          user &&  user?.email ?
+         <button onClick={logOut}
+          className="hover:text-red-300">Log Out</button> 
+
+          :<Link to="/auth/login" className="hover:text-red-300">Login</Link>
+         }
+         {
+          user && user?.email ? "": <Link to="/auth/register" className="hover:text-red-300">Register</Link>
+         }
+
+          
         </div>
       </div>
     );

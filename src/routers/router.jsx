@@ -3,6 +3,9 @@ import HomeLayout from "../layout/HomeLayout";
 import Home from "../components/Home";
 import CategoryCoupon from "../page/CategoryCoupon";
 import CouponDetails from "../page/CouponDetails";
+import AuthLayout from "../layout/AuthLayout";
+import Login from "../page/Login";
+import Register from "../page/Register";
 
 const router = createBrowserRouter([
   {
@@ -37,7 +40,7 @@ const router = createBrowserRouter([
         path: "/coupon/:id",
         element: <CouponDetails></CouponDetails>,
         loader: async ({ params }) => {
-          const response = await fetch("/public/CategoryDetails.json");
+          const response = await fetch("/CategoryDetails.json");
           if (!response.ok) {
             throw new Error("Failed to fetch data");
           }
@@ -50,7 +53,17 @@ const router = createBrowserRouter([
   },
   {
     path: "auth",
-    element: <h1>Login</h1>,
+    element: <AuthLayout></AuthLayout>,
+    children:[
+      {
+        path:"/auth/login",
+        element: <Login></Login>,
+      },
+      {
+        path:"/auth/register",
+        element: <Register></Register>,
+      },
+    ]
   },
   {
     path: "*",

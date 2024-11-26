@@ -5,7 +5,7 @@ import { NavLink } from "react-router";
 const LeftNavbar = () => {
     const [category,setCategory] = useState([]);
     useEffect(()=>{
-        fetch('/public/Category.json')
+        fetch('/Category.json')
         .then((res)=> res.json())
         .then (data => setCategory(data))
     },[])
