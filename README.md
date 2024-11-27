@@ -1,8 +1,20 @@
-# React + Vite
+## project name 
+Coupon99
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# purpose
+It is a coupon collecting single page application where the users can get several coupon and voucers for several things like shopping , grocery, flying and hotel booking.
 
-Currently, two official plugins are available:
+# live URL
+Surge: https://coupon99.surge.sh/
+Firebase:https://couponpro-fd6de.web.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# key features
+1. Slider in the home page
+2. Marquee  for top brand clicking that will go to the coupon card
+3. User can login with email and google .
+4. Only logged in user can have the access to coupon details page and profile page
+
+#  npm packages used
+1. React hot toast
+2. React marquee
+3. Swipper 

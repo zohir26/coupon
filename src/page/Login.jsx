@@ -4,15 +4,26 @@ import { Link } from "react-router";
 import { useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
 import toast, { Toaster } from "react-hot-toast";
-import { sendPasswordResetEmail, getAuth } from "firebase/auth";
-
+import { sendPasswordResetEmail, getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { FaGoogle } from "react-icons/fa";
 const Login = () => {
   const auth = getAuth();
   const { userLogin, setUser } = useContext(AuthContext);
   const [error, setError] = useState({});
   const navigate = useNavigate();
   const emailRef = useRef();
+// handle google login
+const provider = new GoogleAuthProvider();
 
+const handleGoogleSignIn = () =>{
+  signInWithPopup(auth, provider)
+  .then ((result)=>{
+    console.log(result)
+  })
+  .catch((error)=>{
+    console.log(error)
+  })
+}
   // Handle Login
   const handleLogin = (event) => {
     event.preventDefault();
@@ -99,6 +110,13 @@ const Login = () => {
             </div>
             <div className="form-control mt-6">
               <button className="btn btn-primary">Login</button>
+            </div>
+            <h2 className="text-center">Or</h2>
+            <div className="form-control mt-6">
+              <button onClick={handleGoogleSignIn}
+               className="btn btn-primary">
+                 <FaGoogle /> Login with Google
+                 </button>
             </div>
             <p>
               Don't have an account? Please

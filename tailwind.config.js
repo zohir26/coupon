@@ -9,6 +9,9 @@ export default {
       fontFamily : {
         "poppins":["Poppins", "serif"]
       },
+      animation: {
+        'spin-slow': 'spin 2s linear ',
+      },
     },
   },
   plugins: [

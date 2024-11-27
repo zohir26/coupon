@@ -11,7 +11,7 @@ const Register = () => {
   const[showPassword, setShowPassword] =useState(false)
   const validatePassword = (password) => {
     const regex =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
     return regex.test(password);
   };
 
@@ -33,7 +33,7 @@ const Register = () => {
       setError({
         ...error,
         password:
-          "Password must be at least 8 characters long, include an uppercase letter, a lowercase letter, a number, and a special character.",
+          "Password must be at least 6 characters long, include an uppercase letter, a lowercase letter, a number, and a special character.",
       });
       return;
     }

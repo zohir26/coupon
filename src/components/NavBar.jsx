@@ -43,7 +43,7 @@ const NavBar = () => {
                  
             </ul>
           </div>
-          <Link to="/" className="btn btn-ghost text-xl">Coupon PRO </Link>
+          <Link to="/" className="btn btn-ghost text-xl animate-spin-slow">Coupon PRO </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 ">
