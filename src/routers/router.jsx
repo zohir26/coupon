@@ -6,6 +6,7 @@ import CouponDetails from "../page/CouponDetails";
 import AuthLayout from "../layout/AuthLayout";
 import Login from "../page/Login";
 import Register from "../page/Register";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -38,7 +39,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/coupon/:id",
-        element: <CouponDetails></CouponDetails>,
+        element: <PrivateRoute>
+          <CouponDetails></CouponDetails>
+        </PrivateRoute>,
         loader: async ({ params }) => {
           const response = await fetch("/CategoryDetails.json");
           if (!response.ok) {
@@ -54,13 +57,13 @@ const router = createBrowserRouter([
   {
     path: "auth",
     element: <AuthLayout></AuthLayout>,
-    children:[
+    children: [
       {
-        path:"/auth/login",
+        path: "/auth/login",
         element: <Login></Login>,
       },
       {
-        path:"/auth/register",
+        path: "/auth/register",
         element: <Register></Register>,
       },
     ]

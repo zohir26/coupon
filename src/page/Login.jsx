@@ -1,10 +1,12 @@
-import { useContext } from "react";
-import { Link } from "react-router";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
 import toast, {Toaster} from "react-hot-toast";
 
 const Login = () => {
   const {userLogin, setUser} =useContext(AuthContext)
+  const [error, setError] = useState({});
+  const navigate = useNavigate();
   const  handleLogin = (( event)=>{
     event.preventDefault();
     const form = new FormData (event.target);
@@ -16,10 +18,12 @@ const Login = () => {
       const user= result.user;
       setUser(user)
       toast.success("Successfully Logged In")
+      navigate ("/")
       event.target.reset();
     })
-    .catch(error =>{
-      toast.warning(error, "Please Provide Right Credential")
+    .catch(err =>{
+      // toast.warning(error, "Please Provide Right Credential")
+      setError({...error , login:err.code})
     })
   })
   
@@ -44,6 +48,12 @@ const Login = () => {
                   <span className="label-text">Password</span>
                 </label>
                 <input name="password" type="password" placeholder="password" className="input input-bordered" required />
+              {/* show error sms */}
+              {
+                error.login && (
+                  <h2 className="py-2 text-sm text-red-500">{error.login}</h2>
+                )
+              }
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                 </label>

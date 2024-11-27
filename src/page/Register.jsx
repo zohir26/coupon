@@ -1,16 +1,24 @@
-import { useContext } from "react";
-import { Link } from "react-router";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
 import toast, { Toaster } from 'react-hot-toast';
 
 const Register = () => {
- const {createNewUser ,  setUser} = useContext(AuthContext)
+ const {createNewUser ,  setUser,updateUserProfile} = useContext(AuthContext)
+ const navigate=useNavigate()
+ const [error, setError] = useState({})
   const handleSubmit = ((event)=>
    {
     event.preventDefault();
     // get the form data
     const form =new FormData(event.target);
     const name = form.get("name");
+    {
+      if(name.length <5){
+        setError({...error , name:"must be more than 5 character long "})
+        return;
+      }
+    }
     const photo = form.get("photo");
     const email = form.get ("email");
     const password = form. get ("password");
@@ -19,9 +27,18 @@ const Register = () => {
     .then(result =>{
       const user =result.user;
       setUser (user)
+
+      updateUserProfile({displayName:name , photoURL:photo})
+      .then(()=>{
+          navigate('/')
+      })
+        .catch((err)=>{
+          console.log(err)
+        })
       toast.success(`${user.email} Registered Successfully`);
       event.target.reset();
     })
+  
     .catch ((error)=>{
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -45,6 +62,11 @@ const Register = () => {
                 </label>
                 <input name="name" type="text" placeholder="Enter your name" className="input input-bordered" required />
               </div>
+              {
+                error.name && (
+                  <h2>{error.name}</h2>
+                )
+              }
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Photo URL</span>
