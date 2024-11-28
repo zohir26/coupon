@@ -8,7 +8,7 @@ import Login from "../page/Login";
 import Register from "../page/Register";
 import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "../page/ErrorPage";
-
+import Profile from "../page/Profile";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,7 +24,9 @@ const router = createBrowserRouter([
           }
           return await response.json(); // Return all brand data
         },
+        
       },
+
       {
         path: "/categories/:id",
         element: <CategoryCoupon></CategoryCoupon>,
@@ -53,6 +55,8 @@ const router = createBrowserRouter([
           return brand || {}; // Return empty object if brand not found
         },
       },
+
+    
     ],
   },
   {
@@ -67,7 +71,14 @@ const router = createBrowserRouter([
         path: "/auth/register",
         element: <Register></Register>,
       },
-    ]
+
+    ],
+  },
+  {
+    path:'/profile',
+    element: <PrivateRoute>
+      <Profile></Profile>
+    </PrivateRoute>
   },
   {
     path: "*",

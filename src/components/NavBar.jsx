@@ -9,12 +9,12 @@ const NavBar = () => {
   const links = <>
           <li><Link to="/home">Home</Link></li>
           <li><Link to="/brands">Brands</Link></li>
-          <li><Link to="/register">My Profile</Link></li>
+          <li><Link to="/profile">My Profile</Link></li>
           {
             user && user.email ? <div className="flex justify-center items-center gap-4">
               <img className="w-10 h-10 rounded-full" src={user?.photoURL} alt="" />
                <p>{user.displayName}</p>
-            </div> : <li><Link to="/profile">{user && user.email}</Link></li>
+            </div> : ""
           }
   </>
   
