@@ -16,13 +16,15 @@ const HomeLayout = () => {
 
                 <NavBar ></NavBar>
 
-                <Slider></Slider>
+               <div className="">
+               <Slider></Slider>
 
+               </div>
                 <TopBrands></TopBrands>
 
 
 
-                <main className="grid grid-cols-12 mx-auto pt-5 w-11/12">
+                <main className="grid grid-cols-1 md:grid-cols-12 mx-auto pt-5 w-11/12">
                     <aside className="col-span-3">
                         <LeftNavbar></LeftNavbar>
                     </aside>

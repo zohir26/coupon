@@ -20,7 +20,7 @@ const CouponDetails = () => {
      
       <div className="w-11/12 mx-auto">
         <div className="flex flex-col justify-center items-center space-y-4">
-          <h2 className="text-3xl font-bold mb-4">{brand.brand_name}</h2>
+          <h2 className="text-3xl font-bold mb-4 ">{brand.brand_name}</h2>
           <img
             src={brand.brand_logo}
             alt={brand.brand_name}

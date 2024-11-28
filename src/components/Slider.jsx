@@ -13,7 +13,7 @@ const Slider = () => {
   ];
 
   return (
-    <div className="flex justify-center items-center bg-[#be849f]">
+    <div className="  lg:flex justify-center items-center bg-[#be849f] z-1 ">
       <Swiper
         modules={[Autoplay, Navigation]} // Include Navigation module
         spaceBetween={30}
@@ -25,11 +25,11 @@ const Slider = () => {
         loop={true} // Loop through images
         navigation={true} // Enable navigation arrows
         style={{ width: "80%", height: "auto" }}
-        className="w-full h-[600px] justify-center items-center"
+        className="w-full  justify-center items-center"
       >
         {images.map((img, index) => (
           <SwiperSlide key={index}>
-            <div className="flex justify-center items-center mt-10 pb-5 h-[200px] md:h-[400px]">
+            <div className="flex justify-center items-center  pb-5 h-[200px] md:h-[400px]">
               <img
                 src={img}
                 alt={`Slide ${index + 1}`}

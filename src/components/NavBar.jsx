@@ -7,8 +7,8 @@ const NavBar = () => {
 
   const {user,logOut}= useContext(AuthContext);
   const links = <>
-          <li><Link to="/home">Home</Link></li>
-          <li><Link to="/brands">Brands</Link></li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/">Brands</Link></li>
           <li><Link to="/profile">My Profile</Link></li>
           {
             user && user.email ? <div className="flex justify-center items-center gap-4">
@@ -21,7 +21,7 @@ const NavBar = () => {
     return (
         <div className="navbar bg-[#A96685] text-white p-3">
         <div className="navbar-start">
-          <div className="dropdown">
+          <div className="dropdown z-10">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
