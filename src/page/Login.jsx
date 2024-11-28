@@ -1,30 +1,35 @@
 import { useContext, useRef, useState } from "react";
-// import { Link, useNavigate } from "react-router-dom"; // Fixed import
-import { Link } from "react-router";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
 import toast, { Toaster } from "react-hot-toast";
 import { sendPasswordResetEmail, getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { FaGoogle } from "react-icons/fa";
+
 const Login = () => {
   const auth = getAuth();
   const { userLogin, setUser } = useContext(AuthContext);
   const [error, setError] = useState({});
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Declare navigate once
   const emailRef = useRef();
-// handle google login
-const provider = new GoogleAuthProvider();
 
-const handleGoogleSignIn = () =>{
-  signInWithPopup(auth, provider)
-  .then ((result)=>{
-    console.log(result)
-  })
-  .catch((error)=>{
-    console.log(error)
-  })
-}
-  // Handle Login
+  // Handle Google Login
+  const provider = new GoogleAuthProvider();
+
+  const handleGoogleSignIn = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const user = result.user;
+        setUser(user); // Update the user in context
+        toast.success("Logged in successfully with Google!");
+        navigate("/"); // Redirect to home
+      })
+      .catch((error) => {
+        setError({ ...error, google: error.message });
+        toast.error("Google sign-in failed: " + error.message);
+      });
+  };
+
+  // Handle Email/Password Login
   const handleLogin = (event) => {
     event.preventDefault();
     const form = new FormData(event.target);
@@ -36,8 +41,8 @@ const handleGoogleSignIn = () =>{
         const user = result.user;
         setUser(user);
         toast.success("Successfully Logged In");
-        navigate("/");
         event.target.reset();
+        navigate("/"); // Redirect to home
       })
       .catch((err) => {
         setError({ ...error, login: err.code });
@@ -46,7 +51,7 @@ const handleGoogleSignIn = () =>{
 
   // Handle Forget Password
   const handleForgetPassword = () => {
-    const forgetEmail = emailRef.current.value; // Use emailRef to get the email
+    const forgetEmail = emailRef.current.value;
     if (!forgetEmail) {
       toast.error("Please provide a valid email address");
       return;
@@ -94,7 +99,6 @@ const handleGoogleSignIn = () =>{
                 className="input input-bordered"
                 required
               />
-              {/* Show Error Message */}
               {error.login && (
                 <h2 className="py-2 text-sm text-red-500">{error.login}</h2>
               )}
@@ -113,10 +117,12 @@ const handleGoogleSignIn = () =>{
             </div>
             <h2 className="text-center">Or</h2>
             <div className="form-control mt-6">
-              <button onClick={handleGoogleSignIn}
-               className="btn btn-primary">
-                 <FaGoogle /> Login with Google
-                 </button>
+              <button
+                onClick={handleGoogleSignIn}
+                className="btn btn-primary flex items-center gap-2"
+              >
+                <FaGoogle /> Login with Google
+              </button>
             </div>
             <p>
               Don't have an account? Please

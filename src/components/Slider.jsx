@@ -24,12 +24,12 @@ const Slider = () => {
         }}
         loop={true} // Loop through images
         navigation={true} // Enable navigation arrows
-        style={{ width: "80%", height: "auto" }}
+        style={{ width: "80%", height: "auto", }}
         className="w-full  justify-center items-center"
       >
         {images.map((img, index) => (
           <SwiperSlide key={index}>
-            <div className="flex justify-center items-center  pb-5 h-[200px] md:h-[400px]">
+            <div className="flex justify-center items-center mt-4 w-auto pb-5 h-[200px] md:h-[400px]">
               <img
                 src={img}
                 alt={`Slide ${index + 1}`}

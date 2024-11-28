@@ -9,7 +9,7 @@ const CategoryCoupon = () => {
   }
 
   return (
-    <div className="card bg-base-100 w-96 shadow-xl ml-8">
+    <div className="card bg-base-100 w-auto shadow-xl ml-8 ">
       <figure className="px-10 pt-10">
         <img
           src={brand.brand_logo}
