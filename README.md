@@ -5,7 +5,7 @@
 ## 💡  Overview
 CouponPro is a modern web application designed to help users discover and collect exclusive coupons from top brands, all in one place. Browse a wide range of discounts, save your favorite coupons, and apply them directly on the brand’s website to enjoy instant savings. Start saving today with CouponPro – your ultimate destination for deals!
 
-🔗 **Live Project**: [Car Rental Live Demo](https://couponpro-fd6de.firebaseapp.com/)
+🔗 **Live Project**: [Cpupon PRO Live Demo](https://couponpro-fd6de.firebaseapp.com/)
 
 ---
 
